@@ -1,0 +1,132 @@
+{
+    "$id": "http://example.com/example.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "default": {},
+    "description": "The root schema comprises the entire JSON document.",
+    "examples": [
+        {
+            "id": "string",
+            "title": "string",
+            "description": "string",
+            "category": "string",
+            "location": "string",
+            "images": [
+                "Ciao",
+                "Mamma"
+            ],
+            "price": 0,
+            "datePosting": "2019-08-24",
+            "deliveryType": "Shipper"
+        }
+    ],
+    "required": [
+        "title",
+        "description",
+        "category",
+        "location",
+        "price",
+        "datePosting",
+        "deliveryType"
+    ],
+    "title": "The root schema",
+    "type": "object",
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "string"
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "string"
+            ]
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The description schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "string"
+            ]
+        },
+        "category": {
+            "$id": "#/properties/category",
+            "type": "string",
+            "title": "The category schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "string"
+            ]
+        },
+        "location": {
+            "$id": "#/properties/location",
+            "type": "string",
+            "title": "The location schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "string"
+            ]
+        },
+        "images": {
+			"$id": "#root/images", 
+			"title": "Images", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/images/items", 
+				"title": "Items", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"img1"
+				],
+				"pattern": "^.*$"
+			}
+		},
+        "price": {
+            "$id": "#/properties/price",
+            "type": "integer",
+            "title": "The price schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "datePosting": {
+            "$id": "#/properties/datePosting",
+            "type": "string",
+            "title": "The datePosting schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2019-08-24"
+            ]
+        },
+        "deliveryType": {
+            "$id": "#/properties/deliveryType",
+            "type": "string",
+            "title": "The deliveryType schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Shipper"
+            ]
+        }
+    },
+    "additionalProperties": true
+}
