@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const app = express()
 const bodyParser = require('body-parser')
 //const port = 3000
+const port = (process.env.PORT || 80)
 const users = require('./service/users')
 const Ajv = require('ajv').default;
 const { request } = require('chai')
@@ -137,6 +138,6 @@ module.exports = {
   }
 }
 
-app.listen(port, () => {
+app.listen(() => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
