@@ -29,10 +29,12 @@ module.exports = {
       deliveryType
     });
   },
+  getItemById: (id) => items.find(t => t.id == id),
   getAllitems: () => items,
   getCategoryItems: (category) => items.filter(t => t.category == category),
   getLocationItems: (location) => items.filter(t => t.location == location),
   getDateItems: (date) => items.filter(t => t.datePosting == date),
+  deleteItem: (id) => delete items[id],
   modifyItem: (id, title, description, category, location, images, price, datePosting, deliveryType) => {
     x = items.find(i => i.id == id)
     x.title = title
@@ -44,4 +46,5 @@ module.exports = {
     x.datePosting = datePosting
     x.deliveryType = deliveryType
   }
+  
 }

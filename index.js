@@ -105,7 +105,7 @@ app.post('/items', passport.authenticate('basic', {session: false}), (req, res) 
     res.status(201).json({status: "Created"})
   }
   else {
-    res.status(400).json({status: "Bad request"});
+    res.status(400).json(validate.errors);
   }
   
 });
@@ -120,7 +120,18 @@ app.patch('/items/:itemid', passport.authenticate('basic', {session: false}), (r
     res.status(202).json({status: "Modified!"})
   }
   else {
-    res.status(400).json({status: "Bad request"});
+    res.status(400).json(validate.errors);
+  }
+  
+});
+
+app.delete('/items/:itemid', passport.authenticate('basic', {session: false}), (req, res) => {
+  if(items.getItemById(req.params["itemid"])){
+    items.deleteItem(req.params["itemid"])
+    res.status(202).json({status: "Deleted!"})
+  }
+  else {
+    res.status(404).json({status: "Not found"});
   }
   
 });

@@ -81,25 +81,9 @@
                 "string"
             ]
         },
-        "images": {
-			"$id": "#root/images", 
-			"title": "Images", 
-			"type": "array",
-			"default": [],
-			"items":{
-				"$id": "#root/images/items", 
-				"title": "Items", 
-				"type": "string",
-				"default": "",
-				"examples": [
-					"img1"
-				],
-				"pattern": "^.*$"
-			}
-		},
         "price": {
             "$id": "#/properties/price",
-            "type": "integer",
+            "type": "number",
             "title": "The price schema",
             "description": "An explanation about the purpose of this instance.",
             "default": 0,
