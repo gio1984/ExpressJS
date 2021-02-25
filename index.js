@@ -138,6 +138,6 @@ module.exports = {
   }
 }
 
-app.listen(() => {
+app.listen(app.get('port'), () => {
   console.log(`Example app listening at ${port}`)
 })
