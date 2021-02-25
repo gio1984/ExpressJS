@@ -3,7 +3,7 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const app = express()
 const bodyParser = require('body-parser')
-const port = 3000
+//const port = 3000
 const users = require('./service/users')
 const Ajv = require('ajv').default;
 const { request } = require('chai')
@@ -13,6 +13,8 @@ const items = require('./service/items')
 const itemSchema = require('./schemas/itemSchema.json')
 const userSchema = require('./schemas/userSchema.json')
 app.use(express.json());
+
+app.set('port', (process.env.PORT || 80));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
