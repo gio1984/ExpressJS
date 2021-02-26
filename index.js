@@ -91,8 +91,10 @@ app.get('/items', (req, res) => {
     res.json(listRes);
   }
   else{
-    res.status(400).json({status: "Wrong request"})
+    listRes = items.getAllitems();
+    res.status(200).json(listRes)
   }
+  
 })
 
 app.post('/items', passport.authenticate('basic', {session: false}), (req, res) => {

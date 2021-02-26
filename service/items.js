@@ -34,7 +34,13 @@ module.exports = {
   getCategoryItems: (category) => items.filter(t => t.category == category),
   getLocationItems: (location) => items.filter(t => t.location == location),
   getDateItems: (date) => items.filter(t => t.datePosting == date),
-  deleteItem: (id) => delete items[id],
+  deleteItem: (id) => {
+    for(i = 0; i < items.length; i++){
+      if(items[i]["id"] == id){
+        delete items[i];
+      }
+    }
+  }, 
   modifyItem: (id, title, description, category, location, images, price, datePosting, deliveryType) => {
     x = items.find(i => i.id == id)
     x.title = title
